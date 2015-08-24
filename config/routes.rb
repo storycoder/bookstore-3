@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'students#index'
   resources :cart_items
   resources :books
   resources :students
