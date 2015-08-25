@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :students
+  get 'pages/home'
+
   root to: 'students#index'
+
+  devise_for :students, :controllers => {:registrations => "registrations"}
+  
   resources :cart_items
   resources :books
   resources :students
