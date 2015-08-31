@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   
   resources :cart_items
   resources :books
+
+  put 'books/:id/add_to_cart' => 'books#add_to_cart'
+  
   resources :students
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
