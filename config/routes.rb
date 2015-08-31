@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+
+  root to: 'students#index'
+
+  devise_for :students, :controllers => {:registrations => "registrations"}
+  
+  resources :cart_items
+  resources :books
+  resources :students
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
