@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Cart Items</h1>
+<h1>Your Cart</h1>
 
 <table>
   <thead>
     <tr>
       <th>Quantity</th>
-      <th>Student</th>
-      <th>Book</th>
+      <th>Item</th>
+      <th>Total</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,16 +16,16 @@
     <% @cart_items.each do |cart_item| %>
       <tr>
         <td><%= cart_item.quantity %></td>
-        <td><%= cart_item.student %></td>
-        <td><%= cart_item.book %></td>
-        <td><%= link_to 'Show', cart_item %></td>
+        <td><%= cart_item.book.title %></td>
+        <td><%= cart_item.linetotal %></td>
         <td><%= link_to 'Edit', edit_cart_item_path(cart_item) %></td>
-        <td><%= link_to 'Destroy', cart_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Remove from Cart', cart_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<h2>Check out!</h2>
+the magic will go here
 
-<%= link_to 'New Cart item', new_cart_item_path %>
